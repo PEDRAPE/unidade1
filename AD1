@@ -1,0 +1,75 @@
+
+# TRABALHO AD1
+## Questão 1
+
+```mermaid
+graph
+INICIO-->a{digite os 2 numeros:}
+a-->b{{N1,N2}}
+b-->c[(N1=+3)]
+c-->A[(N2=+4)]
+A-->FIM
+
+```
+```
+ALGORITIMO_troca_valores
+DECLARE N1, N2 INTEIROS
+ESCREVA "digite os 2 números":
+LEIA N1, N2
+N1 <- N1+3
+N2 <- N2+4
+FIM 
+
+```
+
+| N1 | N2 | N1=+3|N2=+4|
+|--  |--  |--    |--   |   
+|5   |6   |  8   |10   |
+|0   |0   |  3   | 4   | 
+|3   |3   |6     | 7   |  
+
+
+
+# Questão 2
+
+
+```mermaid
+graph
+INICIO-->c{{N, nota, aprovados}}
+O-->a[[Insira o numero de notas a serem processadas:]]
+a-->b((loops))
+b-->d[(loops = N)]
+d--true-->e{{O numero total de aprovados foi:'aprovados'}}
+d--false-->f{{insira a nota do aluno:}}
+f-->A{nota}
+A-->B[[nota >= 50]]
+B--true-->C(aprovados =+1)
+B--false-->D(N =+1)
+C-->D-->d
+e-->FIM
+c-->O(N<--0)
+      
+
+```
+```
+ALGORITIMO_aprovações
+DECLARE N, nota , aprovados, loops  INTEIROS
+ESCREVA "Insira o numero de notas a serem processadas:"
+LEIA loops
+N<--0
+SE N = loops
+	ENTAO
+		ESCREVA "O numero total de aprovados foi:'aprovados'"
+	SENAO
+		ESCREVA "insira a nota do aluno:"
+		LEIA nota
+			SE nota >= 50
+				ENTAO 
+					aprovados =+1
+			N =+1
+
+FIM
+		
+
+
+```
