@@ -123,9 +123,9 @@ graph
 INICIO-->a{{i<-0, S<-0 }}
 a-->A[[Digite a quantidade de termos:]]
 A-->b((n))
-b-->B([n=i])
-B--true-->P[[O resultado é:'S']]
-B--false-->c(i=0)
+b-->B([n =! i])
+B--false-->P[[O resultado é:'S']]
+B--true-->c(i=0)
 c--true-->C{{denominador<-2, numerador<-1}}
 c--false-->d{{denominador=+2, numerador=+2}}
 C-->D[[i=+1]] 
@@ -135,10 +135,41 @@ e-->B
 
 ```
 ```
-ALGORITMO_aaaaa
-DECLARE numerador, denominador, n, i, S INTEIROS 
+Algoritmo soma_da_serie
+DECLARE n, i, S, numerador, denominador INTEIROS
+i<-0. S<-0
+ESCREVA "digite a quantidade de termos:"
+LEIA n
+ENQUANTO n =! i
+	FAÇA 
+		SE i=0
+			ENTÃO denominador<-2, numerador<-1
+			SENÃO denomidor=+2, numerador=+2
+		i=+1
+		S =+ numerador/denominador
+FIM_ENQUANTO
+ESCREVA "o resultado é:"S
+FIM
 
-```        
-
-
-
+```
+TESTE DE MESA FOI FEITO COM CHATGPT
+|   n    |    i    |    S    | numerador | denominador |           Ação          |
+|--------|---------|---------|-----------|-------------|-------------------------|
+|  Indef |  Indef  |    0    |    Indef  |    Indef    | Início do algoritmo     |
+|  Indef |    0    |    0    |    Indef  |    Indef    | Atribuição de i <- 0    |
+|  Indef |    0    |    0    |    Indef  |    Indef    | Atribuição de S <- 0    |
+|  Indef |    0    |    0    |    Indef  |    Indef    | Aguardando entrada de n |
+|    n   |    0    |    0    |    Indef  |    Indef    | Leitura de n             |
+|    n   |    0    |    0    |    Indef  |    Indef    | Comparando n != i (Verdadeiro) |
+|    n   |    0    |    0    |    Indef  |    Indef    | Início do loop          |
+|    n   |    0    |    0    |    Indef  |    Indef    | i = 0 (Verdadeiro)      |
+|    n   |    0    |    0    |     1     |      2      | denominador <- 2, numerador <- 1 |
+|    n   |    1    |   0.5   |     3     |      4      | i =+ 1                   |
+|    n   |    1    |   0.5   |     3     |      4      | denominador =+ 2, numerador =+ 2 |
+|    n   |    2    |   1.5   |     5     |      6      | i =+ 1                   |
+|    n   |    2    |   1.5   |     5     |      6      | denominador =+ 2, numerador =+ 2 |
+|    n   |    3    |   2.5   |     7     |      8      | i =+ 1                   |
+|    n   |    3    |   2.5   |     7     |      8      | denominador =+ 2, numerador =+ 2 |
+|    n   |   ...   |   ...   |    ...   |     ...     | Continua o padrão até n = i |
+|    n   |    n    |  S(n)   |    ...   |     ...     | Fim do loop              |
+|    n   |    n    |  S(n)   |    ...   |     ...     | Imprime resultado        |
