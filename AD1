@@ -57,19 +57,88 @@ DECLARE N, nota , aprovados, loops  INTEIROS
 ESCREVA "Insira o numero de notas a serem processadas:"
 LEIA loops
 N<--0
-SE N = loops
-	ENTAO
-		ESCREVA "O numero total de aprovados foi:'aprovados'"
-	SENAO
+ENQUANTO N = loops FAÇA
 		ESCREVA "insira a nota do aluno:"
 		LEIA nota
 			SE nota >= 50
 				ENTAO 
 					aprovados =+1
 			N =+1
-
+ESCREVA "O numero total de aprovados foi:'aprovados'"			
 FIM
-		
+```
+
+N=loops| loops | N  | aprovados| nota| repetições
+|--    |--     |--  |--        |--    |--   
+false|3       |0   |0         |60    |0
+false|3       |1   |1         | 40   |1
+false|3       |2   |1         |100   |2
+true |3       |3   |2         |---   |3
+
+
+
+# Questão 3
+```mermaid
+graph
+INICIO-->a{{soma<--0, loops<--0}}
+a-->b(Digite a quantidade de numeros a serem somados:)
+b-->c[[n]]
+c-->d((n>0))
+d--true-->e
+d--false-->G{A quantidade tem que ser maior ou igual a zero}
+G-->FIM
+e[[n>loops]]--false-->f{{o resultado é: 'soma'}}-->FIM
+e--true-->T(digite o numero:)-->A[[num]]-->B((soma =+num))-->N{loops =+1}-->e
 
 
 ```
+
+```ALGORITMO_soma
+DECLARE soma, loops, n, num INTEIROS
+soma<--0, loops<--0
+ESCREVA "digite a quantidade de numeros a serem somados:"
+LEIA n
+SE n>0
+	ENTÃO 
+		ESCREVA "a quantidade tem que ser maior ou igual a zero"
+	SENAO 
+	ENQUANTO n>loops FAÇA
+		ESCREVA "digite o numero:"
+		LEIA num
+		soma <-+num
+		loops<-+1
+FIM ENQUANTO	
+FIM
+```
+|n     |n>0  | num    | soma=+num| loops=+1  |repetições| n>loops    
+|--    |--   |--      |--        |--         |--        |--
+|-1    |false| --     | --       |--         |--        |--
+|2     |true |4      |4          |1          |1         |true
+|2     |true |5      | 9         |2          |2         |false
+
+# Questão 4
+
+```mermaid
+graph
+INICIO-->a{{i<-0, S<-0 }}
+a-->A[[Digite a quantidade de termos:]]
+A-->b((n))
+b-->B([n=i])
+B--true-->P[[O resultado é:'S']]
+B--false-->c(i=0)
+c--true-->C{{denominador<-2, numerador<-1}}
+c--false-->d{{denominador=+2, numerador=+2}}
+C-->D[[i=+1]] 
+d-->D
+D-->e([S =+numerador/denominador])
+e-->B
+
+```
+```
+ALGORITMO_aaaaa
+DECLARE numerador, denominador, n, i, S INTEIROS 
+
+```        
+
+
+
