@@ -1,5 +1,5 @@
 # UNIFOR
-**Nome**: Nome do estudante <br>
+**Nome**: JOAO PEDRO MUNIZ 
 **Disciplina**: Raciocínio lógico algorítmico
 
 ## Exercício exemplo 1
@@ -226,19 +226,38 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+INICIO-->a([digite a nota do aluno:])
+a-->b[[nota]]
+b-->c{nota >= 0}
+c--true-->d{{quant=+1}}
+d-->e(total =+nota)
+e-->a
+c--false-->f{{foram lidas 'quant' notas}}
+f-->A[[media é:'total/quant']]
+A-->FIM
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo_media
+DECLARE nota ,quant ,total INTEIROS
+nota<--0
+ENQUANTO nota >= 0 FAÇA
+	ESCREVA "digite a nota:"
+	LEIA nota
+	quant=+1
+	total=+nota
+FIM_ENQUANTO
+ESCREVA "foram lidas 'quant' notas
+ESCREVA "a media é:'total/quant'"
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+| nota         | quant=+1     | total=+nota  | saida1       | saida2       | 
 |      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|10            | 1            |  10          | - - -        |- - -
+|4             | 2            | 14           |- - -         |- - -
+|-1            | - - -        | - - -        |notas lidas:2 |media é: 7    
