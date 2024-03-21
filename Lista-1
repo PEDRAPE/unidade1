@@ -53,7 +53,7 @@ Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 ter�
 #### Fluxograma (1.0 ponto)
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite o seu salaraio atual}}
+A([INICIO]) --> B{{Digite o seu salario atual}}
 B --> C[/SA/]
 C --> D{SA >= 500}
 D --FALSE--> E[SN = SA * 1.1]
