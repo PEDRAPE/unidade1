@@ -71,7 +71,7 @@ DECLARE SA, SN: Int
 INICIO
 ESCREVA "Digite o seu salário atual"
 LEIA SA
-SE SA >= 500
+SE SA > 500
 	SN = SA * 1.1
 SENÃO
 	SN = SA * 1.2
