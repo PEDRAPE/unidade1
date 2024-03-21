@@ -57,7 +57,7 @@ DECLARE N, nota , aprovados, loops  INTEIROS
 ESCREVA "Insira o numero de notas a serem processadas:"
 LEIA loops
 N<--0
-ENQUANTO N = loops FAÇA
+ENQUANTO N =! loops FAÇA
 		ESCREVA "insira a nota do aluno:"
 		LEIA nota
 			SE nota >= 50
@@ -277,7 +277,7 @@ SE num >= 0
     ENQUANTO num > 0 FAÇA
     digito = num % 10
     num_inv = num_inv * 10 + digito
-    numero = numero // 10
+    num = num // 10
     FIM ENQUANTO
     ESCREVA "numero invertido:, num_inv"
 	SENAO
