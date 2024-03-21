@@ -180,22 +180,42 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+INICIO-->a{{digite a quantidade de numeros:}}
+a-->b([quant])
+b-->c(quant=!0 E quant>0)
+c--true-->d[[digite a unidade:]]
+d-->e((un))
+e-->f([soma =+un])
+f-->A(quant =-1)
+A-->c
+c--false-->B{{o resultado é:'soma'}}
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo_soma
+DECLARE quant ,un ,soma INTEIROS
+ESCREVA "digite a quantidade de numeros:"
+LEIA quant
+ENQUANTO quant =! 0 OU quant > 0 FAÇA
+	ESCREVA "digite a unidade:"
+	LEIA un 
+	soma =+un
+	quant =-1
+FIM_ENQUANTO
+ESCREVA "o resultado é:'soma'"
+FIM
+
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| quant        | quant =!0    | quant >0     | un           | soma +un     |saida 
+|      --      |      --      |      --      |      --      |      --      | --
+| 2            | true         | true         |  10          | 10           |- - -
+| 1            |   true       | true         | 20           | 30           |- - - 
+|0             | false        | false        |- - -         |- - -| o resultado é :'30'
 
 ### Exercício 04 (2.5 pontos)
 Escreva um programa que leia a nota de diversos alunos, até que seja digitada uma nota negativa. 
